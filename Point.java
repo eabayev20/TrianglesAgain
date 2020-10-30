@@ -15,5 +15,8 @@ public class Point {
 
  public double getY(){
    return y;
- }  
+ }
+ public boolean equals(Point other ){
+   return (other.getX() == getX()) && (other.getY() == getY());
+ }
 }
