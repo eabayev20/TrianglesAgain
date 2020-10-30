@@ -13,7 +13,11 @@ public class Triangles {
     v3 = new Point(x3, y3);
   }
   public double getPerimeter() {
-    return Point.distanceTo(v1) + Point.distanceTo(v2) + Point.distanceTo(v3);
+    return v1.distanceTo(v1) + v2.distanceTo(v2) + v3.distanceTo(v3);
+  }
+  public double getArea() {
+    int semi = getPerimeter() / 2;
+    return Math.pow(s * (s- v1.distanceTo(v1)) * (s-v2.distanceTo(v2)) * s-(v3.distanceTo(v3)),(1/2));
   }
 
 
