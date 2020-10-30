@@ -19,6 +19,20 @@ public class Triangles {
     int semi = getPerimeter() / 2;
     return Math.pow(s * (s- v1.distanceTo(v1)) * (s-v2.distanceTo(v2)) * s-(v3.distanceTo(v3)),(1/2));
   }
+  public String classify() {
+    int s1 = Math.round(v1.distanceTo(v1) * 10000.0)/10000.0;
+    int s2 = Math.round(v2.distanceTo(v2) * 10000.0)/10000.0;
+    int s3 = Math.round(v3.distanceTo(v3) * 10000.0)/10000.0;
+    if ((s1 == s2) && (s2 == s3) && (s3 == s1)) {
+      return "equilateral";
+    }
+    else if ((s1 != s2) && (s2 != s3) && (s3 != s1)) {
+        return "scalene";
+    }
+    else {
+      return "isosceles";
+    }
+  }
 
 
 }
