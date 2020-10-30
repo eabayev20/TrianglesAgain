@@ -1,4 +1,4 @@
-public class Triangles {
+public class Triangle {
   private Point v1;
   private Point v2;
   private Point v3;
@@ -13,17 +13,17 @@ public class Triangles {
     v3 = new Point(x3, y3);
   }
   public double getPerimeter() {
-    return v1.distanceTo(v1) + v2.distanceTo(v2) + v3.distanceTo(v3);
+    return v1.distanceTo(v2) + v2.distanceTo(v3) + v3.distanceTo(v1);
   }
   public double getArea() {
-    int semi = getPerimeter() / 2;
-    return Math.pow(s * (s- v1.distanceTo(v1)) * (s-v2.distanceTo(v2)) * s-(v3.distanceTo(v3)),(1/2));
+    double semi = getPerimeter() / 2.0;
+    return Math.sqrt(semi * (semi- v1.distanceTo(v2)) * (semi-v2.distanceTo(v3)) * semi-(v3.distanceTo(v1)));
   }
   public String classify() {
-    int s1 = Math.round(v1.distanceTo(v1) * 10000.0)/10000.0;
-    int s2 = Math.round(v2.distanceTo(v2) * 10000.0)/10000.0;
-    int s3 = Math.round(v3.distanceTo(v3) * 10000.0)/10000.0;
-    if ((s1 == s2) && (s2 == s3) && (s3 == s1)) {
+    double s1 = Math.round(v1.distanceTo(v2) * 10000.0)/10000.0;
+    double s2 = Math.round(v2.distanceTo(v3) * 10000.0)/10000.0;
+    double s3 = Math.round(v3.distanceTo(v1) * 10000.0)/10000.0;
+    if ((s1 == s2) && (s2 == s3)) {
       return "equilateral";
     }
     else if ((s1 != s2) && (s2 != s3) && (s3 != s1)) {
@@ -34,8 +34,21 @@ public class Triangles {
     }
   }
   public String toString() {
-    return "v1" + "(" + x1 + "," + y1 + ")v2(" + x2 + "," + y2 + ")v3(" + x3 + "," + y3 + ")";
+    return "v1" + "(" + v1.getX() + ", " + v1.getY() + ") v2(" + v2.getX() + ", " + v2.getY() + ") v3(" + v3.getX() + ", " + v3.getY() + ")";
   }
+  public void setVertex(int index, Point newP){
+    if(index ==0){
+      v1 = newP;
+    }
+    else if(index ==1){
+      v2 = newP;
+    }
+    else {
+      v3 = newP;
+    }
+
+  }
+
 
 
 }
