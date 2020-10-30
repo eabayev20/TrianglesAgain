@@ -17,7 +17,7 @@ public class Triangle {
   }
   public double getArea() {
     double semi = getPerimeter() / 2.0;
-    return Math.sqrt(semi * (semi- v1.distanceTo(v2)) * (semi-v2.distanceTo(v3)) * semi-(v3.distanceTo(v1)));
+    return Math.sqrt(semi * (semi - v1.distanceTo(v2)) * (semi - v2.distanceTo(v3)) * (semi-(v3.distanceTo(v1))));
   }
   public String classify() {
     double s1 = Math.round(v1.distanceTo(v2) * 10000.0)/10000.0;

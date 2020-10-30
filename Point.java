@@ -20,6 +20,6 @@ public class Point {
    return (other.getX() == getX()) && (other.getY() == getY());
  }
  public double distanceTo (Point other) {
-   return Math.pow(Math.pow(other.getX() - getX(),2) + Math.pow(other.getY() - getY(),2),(1/2));
+   return Math.sqrt((Math.pow((other.getX()-getX()),2) + Math.pow((other.getY()-getY()),2)));
  }
 }
