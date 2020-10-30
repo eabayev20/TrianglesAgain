@@ -33,6 +33,9 @@ public class Triangles {
       return "isosceles";
     }
   }
+  public String toString() {
+    return "v1" + "(" + x1 + "," + y1 + ")v2(" + x2 + "," + y2 + ")v3(" + x3 + "," + y3 + ")";
+  }
 
 
 }
